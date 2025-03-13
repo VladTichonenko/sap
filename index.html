@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Duck Bot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #e3f2fd;
+        }
+        .gif-container {
+            margin-bottom: 20px;
+        }
+        .user-info {
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 48px;
+            color: #2196F3;
+        }
+        .user-data {
+            text-align: left;
+        }
+        .description {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2N1dG0wc3Y5Z2RjZ2J5eDl1Z3NqZ3U5dTR5c2d0aDk1dW1xZ2d5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btPCcdNniyf0ArS/giphy.gif" 
+             alt="Duck GIF" 
+             style="width: 300px; border-radius: 15px;">
+    </div>
+
+    <div class="user-info">
+        <i class="fa-solid fa-kiwi-bird"></i>
+        <div class="user-data">
+            <div style="color: #666;">Username</div>
+            <div id="username" style="font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div class="user-info">
+        <i class="fa-regular fa-id-badge"></i>
+        <div class="user-data">
+            <div style="color: #666;">User ID</div>
+            <div id="userid" style="font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div class="description">
+        <p style="font-size: 1.2em;"><strong>Инструменты бота:</strong></p>
+        <p><i class="fa-solid fa-paper-plane"></i> /post - отправка отчетов</p>
+        <p><i class="fa-solid fa-comment-dots"></i> Пишите в бота, чтобы задать вопросы Филиппу</p>
+        <p><i class="fa-solid fa-circle-exclamation"></i> Ты можешь быть заблокирован в любой момент (за мат или по желанию Админа)</p>
+        <p><i class="fa-regular fa-thumbs-up"></i> Если тебя зовут Егор большинство функционала тебе не доступно, сори </p>
+    </div>
+
+    <script>
+        // Получаем параметры из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const userid = urlParams.get('userid');
+
+        // Отображаем данные пользователя
+        document.getElementById('username').textContent = username || 'Не указан';
+        document.getElementById('userid').textContent = userid || 'Не указан';
+    </script>
+</body>
+</html>
